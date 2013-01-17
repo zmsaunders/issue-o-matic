@@ -11,7 +11,11 @@ class User extends Eloquent{
 		$user = new User;
 
 		$user = User::find(1);
+		
+		if ($user)
+			return $user->username;
 
-		return $user->username;
+		else
+			return "No Users found!";
 	}
 }
