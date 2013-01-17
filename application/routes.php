@@ -34,7 +34,6 @@
 
 Route::controller('home');
 Route::any('/', 'home@index');
-Route::any('/welcome', 'home@welcome');
 
 /*
 |--------------------------------------------------------------------------

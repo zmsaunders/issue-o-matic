@@ -23,7 +23,7 @@
 
 $environments = array(
 
-	'local' => array('http://laravel-dev*'),
+	'local' => array('http://laravel-dev*', 'localhost'),
 
 );
 

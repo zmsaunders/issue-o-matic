@@ -32,19 +32,18 @@ class Home_Controller extends Base_Controller {
 
 	public function __construct()
 	{
-		$this
-			->Filter('before', 'auth')
-			->Only(array('welcome'));
+		// $this
+		// 	->Filter('before', 'auth')
+		// 	->Only(array('welcome'));
 	}
 
 	public function action_index()
 	{
+
+		$user = User::first_user();
+
+		echo $user;
+
 		return View::make('home.index');
 	}
-
-	public function action_welcome()
-	{
-		return View::make('home.index');	
-	}
-
 }
