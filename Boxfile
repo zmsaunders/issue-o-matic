@@ -2,7 +2,7 @@ global:
   env:
     - LARAVEL_ENV: production
 web1:
-  name: pagoda
+  name: laravel
   shared_writable_dirs:
     - /storage/cache
     - /storage/database
@@ -24,3 +24,7 @@ web1:
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
+db1:
+  name: laravel
+  type: mysql
+  
