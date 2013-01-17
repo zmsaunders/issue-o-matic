@@ -31,6 +31,7 @@ class Ticket_controller extends Base_Controller {
     */
 
     public $restful = TRUE;
+    // public $layout = 'layouts.public';
 
     public function get_index()
     {
