@@ -32,8 +32,8 @@
 |
 */
 
-Route::controller('home');
-Route::any('/', 'home@index');
+Route::controller('ticket');
+Route::any('/', 'ticket@index');
 
 /*
 |--------------------------------------------------------------------------

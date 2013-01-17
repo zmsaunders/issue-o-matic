@@ -40,10 +40,8 @@ class Home_Controller extends Base_Controller {
 	public function action_index()
 	{
 
-		$user = User::first_user();
+		$issues = Issue::all();
 
-		echo $user;
-
-		return View::make('home.index');
+		return View::make('issues.all')->with('issues', $issues);
 	}
 }
