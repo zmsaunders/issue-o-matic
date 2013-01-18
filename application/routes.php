@@ -33,7 +33,12 @@
 */
 
 Route::controller('ticket');
-Route::any('/', 'ticket@index');
+
+Route::any('/', function()
+{
+    return View::make('tickets.select');
+});
+//Route::post('ticket/new', 'ticket@new');
 
 /*
 |--------------------------------------------------------------------------
