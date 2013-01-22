@@ -1,5 +1,11 @@
 @layout('layouts.public')
 
+@section('header')
+    @parent
+    <small>Create a new ticket</small>
+@endsection
+
+
 @section('content')
 <p>Found a bug? Want a new feature? Start by reporting it here.</p>
     <ul id="ticketTab" class="nav nav-tabs">

@@ -15,14 +15,18 @@
                     <ul class="nav nav-list">
                         @section('nav')
                             <li class="nav-header">Tickets</li>
-                            <li><a href="/">New</a></li>
+                            <li><a href="/ticket/new">New</a></li>
                         @yield_section
                     </ul>
                 </div>
             </div>
             <div class="span10">
                 <header class="row-fluid">
-                    <h1>What is this, I don't even.</h1>
+                    <h1>
+                    @section('header')
+                        Issue-o-matic!
+                    @yield_section
+                    </h1>
                 </header>
                 @yield('content')
             </div>

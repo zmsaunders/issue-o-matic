@@ -1,5 +1,6 @@
 <h2>I want something new</h2>
 {{ Form::open() }}
+    <input type="hidden" name="type" value="feature" />
     <div class="row-fluid">
         {{ Form::text('summary', '', array('placeholder' => 'What are you calling this new feature?', 'class' => 'span10')) }}
     </div>

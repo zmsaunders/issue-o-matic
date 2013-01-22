@@ -32,24 +32,34 @@ class Ticket_controller extends Base_Controller {
     // public $layout = 'layouts.public';
     public $restful = TRUE;
 
-    public function get_index()
+    public function get_index($id = FALSE)
+    {
+        if ($id)
+            return View::make('ticket.view');
+        else
+            return View::make('tickets.list')->with('tickets', Ticket::get_ticket());
+    }
+
+    public function get_new()
     {
         return View::make('tickets.select');
     }
 
-    public function post_new($type = NULL)
-    {
-        switch ($type)
-        {
-            case "bug":
-                return View::make('tickets.new');
-            break;
-            default:
-                return Response::error('404');
-        }
+    public function post_new()
+    {   
+        $input = Input::get();
+        $ticket = Ticket::create_ticket($input);
+
+        var_dump($ticket);
+
+        if ($ticket)
+            return View::make('tickets.created')->with('ticket', $ticket);
+
+        else
+            return Response::error('404');
     }
 
-    public function action_view($id = null)
+    public function get_list($id = null)
     {
         $tickets = Ticket::get_ticket($type);
 

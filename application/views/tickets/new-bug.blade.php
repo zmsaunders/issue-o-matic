@@ -1,5 +1,6 @@
 <h2>Report a bug</h2>
 {{ Form::open() }}
+    <input type="hidden" name="type" value="bug" />
     <div class="row-fluid">
         {{ Form::text('summary', '', array('placeholder' => 'What\'s wrong?', 'class' => 'span10')) }}
     </div>

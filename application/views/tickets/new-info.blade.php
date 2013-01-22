@@ -1,6 +1,6 @@
 <h2>I have a question</h2>
 {{ Form::open() }}
-
+    <input type="hidden" name="type" value="info" />
     <div class="row-fluid">
         {{ Form::textarea('details', '', array('placeholder' => 'What can I help you with?', 'class' => 'span10')) }}
     </div>
