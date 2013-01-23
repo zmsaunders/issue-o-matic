@@ -38,19 +38,10 @@ class Ticket extends Eloquent{
         ));
 
         if ($ticket)
-            return Ticket::get_ticket($ticket->id);
+            return Ticket::find($ticket->id);
 
         else
             return FALSE;
-    }
-
-    public static function get_ticket($id = NULL)
-    {
-        if ($id)
-            return self::find($id);
-        
-        else
-            return self::all();
     }
 
     public function update_ticket()

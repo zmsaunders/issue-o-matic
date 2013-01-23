@@ -35,9 +35,18 @@ class Ticket_controller extends Base_Controller {
     public function get_index($id = FALSE)
     {
         if ($id)
-            return View::make('ticket.view');
+        {
+            $ticket = Ticket::find($id);
+
+            if ($ticket->exists())
+                return View::make('ticket.view')->with('ticket', $ticket);    
+
+            else
+                Response::error('404');
+        }
+            
         else
-            return View::make('tickets.list')->with('tickets', Ticket::get_ticket());
+            return View::make('tickets.list')->with('tickets', Ticket::all());
     }
 
     public function get_new()
@@ -49,8 +58,6 @@ class Ticket_controller extends Base_Controller {
     {   
         $input = Input::get();
         $ticket = Ticket::create_ticket($input);
-
-        var_dump($ticket);
 
         if ($ticket)
             return View::make('tickets.created')->with('ticket', $ticket);
